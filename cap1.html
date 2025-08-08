@@ -1,19 +1,59 @@
-<div class="teorema">
-    <h3>(Princípio da Boa Ordenação)</h3>
-    <p>
-        Todo subconjunto não-vazio \(A \subset \mathbb{N}\) possui um elemento mínimo.
-    </p>
-</div>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Capítulo 1: Números Naturais</title> <link rel="stylesheet" href="style.css">
 
-<div class="prova">
-    <p>
-        <b>Demonstração.</b> Usando a notação \(I_n = \{p \in \mathbb{N}, 1 \le p \le n\}\),
-        consideremos o conjunto \(X \subset \mathbb{N}\), formado pelos números \(n \in \mathbb{N}\)
-        tais que \(I_n \subset \mathbb{N} - A\). (Assim, dizer que \(n \in X\) significa afirmar
-        que \(n \notin A\) e que todos os números naturais menores do que \(n\) também não
-        pertencem a A.) Se tivermos \(1 \in A\), o teorema estará demonstrado pois 1 será o
-        menor elemento de A. Se, porém, for \(1 \notin A\) então \(1 \in X\). Por outro lado,
-        temos \(X \neq \mathbb{N}\). (Pois \(X \subset \mathbb{N} - A\) e \(A \neq \emptyset\).)
-        Assim, X cumpre a primeira parte
-    </p>
-</div>
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body>
+
+    <div class="container">
+    
+        <nav class="sidebar">
+            <h3>Sumário</h3>
+            <ul>
+                <li><a href="index.html">Prefácio</a></li>
+                <li><a href="cap1.html">1. Números Naturais</a></li>
+                <li><a href="capitulo2.html">2. Corpo dos Reais</a></li>
+                </ul>
+        </nav>
+
+        <main class="content">
+            
+            <h1>Capítulo 1: Números Naturais</h1>
+
+            <div class="teorema">
+                <h3>(Princípio da Boa Ordenação)</h3>
+                <p>
+                    Todo subconjunto não-vazio \(A \subset \mathbb{N}\) possui um elemento mínimo.
+                </p>
+            </div>
+
+            <div class="prova">
+                <p>
+                    <b>Demonstração.</b> Usando a notação \(I_n = \{p \in \mathbb{N}, 1 \le p \le n\}\),
+                    consideremos o conjunto \(X \subset \mathbb{N}\), formado pelos números \(n \in \mathbb{N}\)
+                    tais que \(I_n \subset \mathbb{N} - A\). (Assim, dizer que \(n \in X\) significa afirmar
+                    que \(n \notin A\) e que todos os números naturais menores do que \(n\) também não
+                    pertencem a A.) Se tivermos \(1 \in A\), o teorema estará demonstrado pois 1 será o
+                    menor elemento de A. Se, porém, for \(1 \notin A\) então \(1 \in X\). Por outro lado,
+                    temos \(X \neq \mathbb{N}\). (Pois \(X \subset \mathbb{N} - A\) e \(A \neq \emptyset\).)
+                    Assim, X cumpre a primeira parte
+                </p>
+            </div>
+            
+        </main>
+        
+    </div>
+
+</body>
+</html>
