@@ -47,3 +47,41 @@ body {
     padding: 20px 40px;
     max-width: 800px;
 }
+
+/* Estilos para os ambientes matemáticos */
+
+.teorema, .definicao, .exemplo, .prova {
+    padding: 15px 20px;
+    margin: 25px 0;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 4px;
+}
+
+.teorema h3, .definicao h3, .exemplo h3, .prova h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+/* Cores específicas para cada ambiente */
+
+.teorema {
+    background-color: #e9f5f7;
+    border-left-color: #005f73;
+}
+
+.definicao {
+    background-color: #fffbe6;
+    border-left-color: #fca311;
+}
+
+.exemplo {
+    background-color: #f4f4f4;
+    border-left-color: #6c757d;
+}
+
+.prova {
+    background-color: #f8f9fa;
+    border-left-color: #ced4da;
+    font-style: italic;
+}
