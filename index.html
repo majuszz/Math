@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Minhas Notas de Matemática</title>
+    
+    <link rel="stylesheet" href="style.css">
 
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
-
-    <style>
-        body {
-            font-family: serif;
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-    </style>
 </head>
 <body>
 
-    <h1>Teorema Fundamental do Cálculo</h1>
+    <div class="container">
+    
+        <nav class="sidebar">
+            <h3>Sumário</h3>
+            <ul>
+                <li><a href="index.html">Prefácio</a></li>
+                <li><a href="capitulo1.html">1. Números Naturais</a></li>
+                <li><a href="capitulo2.html">2. Corpo dos Reais</a></li>
+                </ul>
+        </nav>
 
-    <p>
-        A primeira parte do Teorema Fundamental do Cálculo afirma que se $f$ é uma função contínua em $[a, b]$, então a função $F$ definida por
-        \[F(x) = \int_a^x f(t) \, dt \]
-        é contínua em $[a, b]$ e sua derivada é $F'(x) = f(x)$.
-    </p>
-
-    <p>
-        Isso nos permite usar a fórmula de Bhaskara, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
-    </p>
+        <main class="content">
+            <h1>Prefácio</h1>
+            <p>
+                Bem-vindo às minhas notas de aula.
+                Use o menu ao lado para navegar entre os capítulos.
+            </p>
+            <p>
+                Um exemplo de fórmula em linha: \( \sqrt{b^2 - 4ac} \).
+            </p>
+            <p>
+                E uma fórmula em destaque:
+                \[ \int_a^b f(x) \, dx = F(b) - F(a) \]
+            </p>
+        </main>
+        
+    </div>
 
 </body>
 </html>
