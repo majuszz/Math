@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Capítulo 1: Números Naturais</title> <link rel="stylesheet" href="style.css">
+    <title>Capítulo 1: Conjunto enumeráveis e não </title> <link rel="stylesheet" href="style.css">
 
     <script>
     window.MathJax = {
@@ -29,7 +29,7 @@
 
         <main class="content">
             
-            <h1>Capítulo 1: Números Naturais</h1>
+            <h1>Capítulo 1: Conjuntos enumeráveis e não</h1>
 
             <div class="teorema">
                 <h3>(Princípio da Boa Ordenação)</h3>
@@ -38,22 +38,40 @@
                 </p>
             </div>
 
-            <div class="prova">
-                <p>
-                    <b>Demonstração.</b> Usando a notação \(I_n = \{p \in \mathbb{N}, 1 \le p \le n\}\),
-                    consideremos o conjunto \(X \subset \mathbb{N}\), formado pelos números \(n \in \mathbb{N}\)
-                    tais que \(I_n \subset \mathbb{N} - A\). (Assim, dizer que \(n \in X\) significa afirmar
-                    que \(n \notin A\) e que todos os números naturais menores do que \(n\) também não
-                    pertencem a A.) Se tivermos \(1 \in A\), o teorema estará demonstrado pois 1 será o
-                    menor elemento de A. Se, porém, for \(1 \notin A\) então \(1 \in X\). Por outro lado,
-                    temos \(X \neq \mathbb{N}\). (Pois \(X \subset \mathbb{N} - A\) e \(A \neq \emptyset\).)
-                    Assim, X cumpre a primeira parte
-                </p>
-            </div>
+           <div class="prova">
+    <p>
+        <b>Demonstração.</b> Usando a notação \[I_n = \{p \in \mathbb{N}, 1 \le p \le n\}\]
+        consideremos o conjunto \(X \subset \mathbb{N}\), formado pelos números \(n \in \mathbb{N}\)
+        tais que \(I_n \subset \mathbb{N} - A\). (Assim, dizer que \(n \in X\) significa afirmar
+        que \(n \notin A\) e que todos os números naturais menores do que \(n\) também não
+        pertencem a A.) Se tivermos \(1 \in A\), o teorema estará demonstrado pois 1 será o
+        menor elemento de A. Se, porém, for \(1 \notin A\) então \(1 \in X\). Por outro lado,
+        temos \(X \neq \mathbb{N}\). (Pois \(X \subset \mathbb{N} - A\) e \(A \neq \emptyset\).)
+        Assim, X cumpre a primeira parte da hipótese de P3 (contém 1) mas não satisfaz à conclusão de
+        P3 (não é igual a \(\mathbb{N}\)). Logo não pode cumprir a segunda parte
+        da hipótese. Isto quer dizer: deve existir algum \(n \in X\) tal que
+        \(n + 1 \notin X\). Seja \(a = n + 1\). Então todos os inteiros desde 1 até
+        \(n\) pertencem ao complementar de \(A\) mas \(a = n + 1\) pertence a
+        \(A\). Desta maneira, \(a\) é o menor elemento do conjunto \(A\), o que
+        demonstra o teorema.
+    </p>
+</div>
             
         </main>
         
     </div>
 
+
+    <div class="teorema">
+                <p>
+                    Todo conjunto infinito \(X\) contém um subconjunto infinito e enumerável.
+                </p>
+            </div>
+    
+<div class="prova">
+    <p> <b> Demonstração:</b>
+
+        
+    </p>
 </body>
 </html>
