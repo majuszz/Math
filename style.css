@@ -85,3 +85,37 @@ body {
     border-left-color: #ced4da;
     font-style: italic;
 }
+/* --- CÓDIGO PARA NUMERAÇÃO AUTOMÁTICA --- */
+
+/* 1. Inicia um contador chamado "theorem_counter" para a página inteira */
+body {
+    counter-reset: theorem_counter; 
+}
+
+/* 2. Para cada um desses ambientes, aumenta o contador em 1 */
+.teorema, .definicao, .exemplo, .prova, .corolario, .lema {
+    counter-increment: theorem_counter;
+}
+
+/* 3. Adiciona o texto "Teorema X." ANTES do título que você escrever */
+.teorema h3::before {
+    content: "Teorema " counter(theorem_counter) ". ";
+    font-weight: bold; /* Deixa o "Teorema X." em negrito */
+}
+
+/* Faz o mesmo para os outros ambientes */
+.definicao h3::before {
+    content: "Definição " counter(theorem_counter) ". ";
+    font-weight: bold;
+}
+
+.exemplo h3::before {
+    content: "Exemplo " counter(theorem_counter) ". ";
+    font-weight: bold;
+}
+
+/* Adicione outros se precisar, como corolário, lema, etc. */
+.corolario h3::before {
+    content: "Corolário " counter(theorem_counter) ". ";
+    font-weight: bold;
+}
