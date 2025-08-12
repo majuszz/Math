@@ -45,10 +45,11 @@ body {
 /* Estilo da área de conteúdo principal */
 .content {
     flex-grow: 1; /* Faz o conteúdo ocupar o resto do espaço */
-    padding: 20px 40px;
-    margin-left: 250px; /* Adiciona uma margem para compensar a largura do menu fixo */
+    padding: 20px 20px; /* ALTERADO: Diminui o padding horizontal para 20px */
+    margin-left: 270px; /* ALTERADO: Mantém uma margem segura de 270px */
     text-align: justify;
 }
+
 
 /* Estilos para os ambientes matemáticos (EXCETO o 'solucao') */
 .teorema, .definicao, .exemplo, .prova, .corolario, .lema, .exercicio {
