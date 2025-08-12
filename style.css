@@ -19,7 +19,7 @@ body {
     padding: 20px;
     height: 100vh; /* Ocupa 100% da altura da tela */
     border-right: 1px solid #ddd;
- position: fixed; /* Fixa o menu na posição */
+    position: fixed; /* Fixa o menu na posição */
     top: 0; /* Alinha o menu no topo */
     left: 0; /* Alinha o menu à esquerda */
     z-index: 1000; /* Garante que o menu fique acima de outros elementos */
@@ -27,12 +27,10 @@ body {
 .sidebar h3 {
     margin-top: 0;
 }
-
 .sidebar ul {
     list-style-type: none;
     padding: 0;
 }
-
 .sidebar li a {
     text-decoration: none;
     color: #333;
@@ -40,7 +38,6 @@ body {
     padding: 8px 10px;
     border-radius: 4px;
 }
-
 .sidebar li a:hover {
     background-color: #e0e0e0;
 }
@@ -50,128 +47,134 @@ body {
     flex-grow: 1; /* Faz o conteúdo ocupar o resto do espaço */
     padding: 20px 40px;
     max-width: 800px;
- /* CÓDIGO ADICIONADO AQUI */
     margin-left: 250px; /* Adiciona uma margem para compensar a largura do menu fixo */
-    text-align: justify; 
+    text-align: justify;
 }
-/* Estilos para os ambientes matemáticos */
-.teorema, .definicao, .exemplo, .prova, .corolario, .lema, .exercicio, .solucao {
+
+/* Estilos para os ambientes matemáticos (EXCETO o 'solucao') */
+.teorema, .definicao, .exemplo, .prova, .corolario, .lema, .exercicio {
     padding: 15px 20px;
     margin: 25px 0;
     border-left-width: 5px;
     border-left-style: solid;
     border-radius: 4px;
 }
-.exercicio h3, .solucao h3 {
+
+/* Estilo para o cabeçalho H3 dentro dos ambientes */
+.exercicio h3 {
     margin-top: 0;
-}
-.exercicio h3, .solucao h3 {
-    margin-top: 0;
-    margin-bottom: 5px; /* Valor pequeno para manter uma leve separação */
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
-.exercicio p, .solucao p {
+/* Estilos para os parágrafos dentro dos ambientes */
+.exercicio p {
     margin-top: 0;
-    margin-bottom: 10px; /* Mantém a separação entre parágrafos, se houver */
+    margin-bottom: 10px;
 }
+
 /* Cores específicas para cada ambiente */
 .teorema {
     background-color: #e9f5f7;
     border-left-color: #005f73;
 }
-
 .definicao {
     background-color: #fffbe6;
     border-left-color: #fca311;
 }
-
 .exemplo {
     background-color: #f4f4f4;
     border-left-color: #6c757d;
 }
-
 .prova {
     background-color: #f8f9fa;
     border-left-color: #ced4da;
 }
-
 .corolario {
     background-color: #e0f2f1;
     border-left-color: #00695c;
 }
-
 .lema {
     background-color: #e3f2fd;
     border-left-color: #1565c0;
 }
-
 .exercicio {
     background-color: #fff0f0;
     border-left-color: #c44f4f;
 }
 
-.solucao {
+/* Ajustes para o ambiente de solução (usando <details>) */
+details.solucao {
+    margin: 25px 0; /* Move a margem para o elemento principal <details> */
+}
+details.solucao summary {
+    padding: 15px 20px;
+    cursor: pointer;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 4px;
     background-color: #f0fff0;
     border-left-color: #4CAF50;
+    list-style: none; /* Remove o marcador de triângulo padrão */
+}
+details.solucao > div {
+    padding: 15px 20px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-radius: 4px;
+    background-color: #f0fff0;
+    border-left-color: #4CAF50;
+    margin: 0;
+    padding-top: 5px;
+}
+details.solucao summary::before {
+    content: "Solução. ";
+    font-weight: bold;
+    color: #4CAF50;
 }
 
 /* --- CÓDIGO PARA NUMERAÇÃO AUTOMÁTICA --- */
 body {
     counter-reset: theorem_counter exercicio_counter;
 }
-
 .teorema, .definicao, .exemplo, .prova, .corolario, .lema {
     counter-increment: theorem_counter;
 }
-
 .exercicio {
     counter-increment: exercicio_counter;
 }
-
 .teorema h3::before {
     content: "Teorema " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #005f73;
 }
-
 .definicao h3::before {
     content: "Definição " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #fca311;
 }
-
 .exemplo h3::before {
     content: "Exemplo " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #6c757d;
 }
-
 .prova h3::before {
     content: "Prova " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #ced4da;
 }
-
 .corolario h3::before {
     content: "Corolário " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #00695c;
 }
-
 .lema h3::before {
     content: "Lema " counter(theorem_counter) ". ";
     font-weight: bold;
     color: #1565c0;
 }
-
 .exercicio h3::before {
     content: "Exercício " counter(exercicio_counter) ". ";
     font-weight: bold;
     color: #c44f4f;
-}
-
-.solucao p::before {
-    content: "Solução. ";
-    font-weight: bold;
-    color: #4CAF50;
 }
