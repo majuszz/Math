@@ -112,6 +112,7 @@ details.solucao {
     border-radius: 4px;
     background-color: #f0fff0;
     border-left-color: #4CAF50;
+    width: 100%;
 }
 details.solucao summary {
     cursor: pointer;
