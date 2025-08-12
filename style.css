@@ -4,6 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     background-color: #fdfdfd;
+    hyphens: auto;
 }
 
 /* O contêiner principal que usa Flexbox para criar as colunas */
@@ -51,8 +52,8 @@ body {
     max-width: 800px;
  /* CÓDIGO ADICIONADO AQUI */
     margin-left: 250px; /* Adiciona uma margem para compensar a largura do menu fixo */
+    text-align: justify; 
 }
-
 /* Estilos para os ambientes matemáticos */
 .teorema, .definicao, .exemplo, .prova, .corolario, .lema, .exercicio, .solucao {
     padding: 15px 20px;
