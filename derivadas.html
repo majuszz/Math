@@ -38,469 +38,470 @@
 
         <main class="content">
             
-            <h1>Capítulo 7: Derivadas</h1>
+        <main class="content">
+    
+    <h1>Capítulo 7: Derivadas</h1>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    A fim de que \(f : X \to \mathbb{R}\) seja derivável no ponto \(a \in X \cap X'\) é necessário e suficiente que exista um função \(\eta : X \to \mathbb{R}\), contínua no ponto a, tal que \(f(x) = f(a) + \eta(x)(x-a)\) para todo \(x \in X\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Se f é derivável em a, defina \(\eta : X \to \mathbb{R}\), dada por
-                        \[ \eta(x) = \begin{cases} f'(a) & \text{se } x=a \\ \frac{f(x)-f(a)}{x-a} & \text{se } x \ne a \end{cases} \]
-                        \(\eta(x)\) é contínua em a, pois
-                        \[ \lim_{x \to a} \eta(x) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a} = f'(a) = \eta(a) \]
-                        Por outro lado, sendo \(\eta\) contínua em a então \(\lim_{x \to a} \eta(x)\) existe e portanto \(\lim_{x \to a} \eta(x) = \eta(a) = f'(a)\)
-                    </p>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            A fim de que \(f : X \to \mathbb{R}\) seja derivável no ponto \(a \in X \cap X'\) é necessário e suficiente que exista um função \(\eta : X \to \mathbb{R}\), contínua no ponto a, tal que \(f(x) = f(a) + \eta(x)(x-a)\) para todo \(x \in X\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Se f é derivável em a, defina \(\eta : X \to \mathbb{R}\), dada por
+                \[ \eta(x) = \begin{cases} f'(a) & \text{se } x=a \\ \frac{f(x)-f(a)}{x-a} & \text{se } x \ne a \end{cases} \]
+                \(\eta(x)\) é contínua em a, pois
+                \[ \lim_{x \to a} \eta(x) = \lim_{x \to a} \frac{f(x)-f(a)}{x-a} = f'(a) = \eta(a) \]
+                Por outro lado, sendo \(\eta\) contínua em a então \(\lim_{x \to a} \eta(x)\) existe e portanto \(\lim_{x \to a} \eta(x) = \eta(a) = f'(a)\)
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Sejam \(f, g, h : X \to \mathbb{R}\) tais que \(f(x) \le g(x) \le h(x)\) para todo \(x \in X\). Se f e h são deriváveis em \(a \in X \cap X'\), com \(f(a) = h(a)\) e \(f'(a) = h'(a)\) prove que g é derivável nesse ponto, com \(g'(a) = f'(a)\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Iremos fixar a notação:
+                \[ \lim_{x \to a^+} f(x) = f(a^+) \quad \text{e} \quad \lim_{x \to a^-}f(x) = f(a^-) \]
+                Como \(f(a)=h(a)\), \(f(a) \le g(a) \le h(a) =f(a)\implies g(a)=h(a)\).
+                \[ f(x)-f(a) \le g(x)-g(a) \le h(x)-h(a) \]
+                Daí, dividindo a desigualdade por \(x-a>0\) e tomando o limite
+                \[ \lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} \le \lim_{x \to a^+} \frac{g(x)-g(a)}{x-a} \le \lim_{x \to a^+} \frac{h(x)-h(a)}{x-a} \]
+                \[ \implies f'(a^+) \le \lim_{x \to a^+} \frac{g(x)-g(a)}{x-a} \le h'(a^+) \]
+                \[ \implies g'(a^+) = h'(a^+) = f'(a^+) \]
+                Fazendo o mesmo procedimento, sendo que tomando os limites laterais a esquerda teremos
+                \[ g'(a^-) = h'(a^-) = f'(a^-) \]
+                Como f, g, h são deriváveis em a então \(h'(a^-)=h'(a^+)=f'(a^-)=f'(a^+)\)
+                \[ \implies g'(a) = h'(a) = f'(a) \]
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f : X \to \mathbb{R}\) derivável no ponto \(a \in X \cap X' \cap X'_+\). Se \(x_n < a < y_n\) para todo n e \(\lim x_n = \lim y_n = a\), prove que \(\lim_{n \to +\infty} \frac{f(y_n) - f(x_n)}{y_n - x_n} = f'(a)\). Interprete este fato geometricamente.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                <div class="align">
+                    \[ \frac{f(y_n) - f(x_n)}{y_n - x_n} = \frac{f(y_n) - f(a)}{y_n - x_n} + \frac{f(a) - f(x_n)}{y_n - x_n} \]
+                    \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ \frac{y_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
+                    \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ \frac{y_n - x_n + x_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
+                    \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ 1 + \frac{x_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
+                    \[ = \frac{f(y_n) - f(a)}{y_n - a} + \frac{f(y_n) - f(a)}{y_n - a} \frac{x_n - a}{y_n - x_n} - \frac{f(x_n) - f(a)}{x_n - a} \left[ \frac{x_n - a}{y_n - x_n} \right] \]
+                    \[ = \frac{f(y_n) - f(a)}{y_n - a} + \left( \frac{x_n - a}{y_n - x_n} \right) \left( - \frac{f(x_n) - f(a)}{x_n - a} + \frac{f(y_n) - f(a)}{y_n - a} \right) \]
                 </div>
-            </details>
+                Assim, tomando o limite, usando o fato que \(\frac{x_n-a}{y_n-x_n}\) é limitado (pois \(x_n < a < y_n \implies x_n - a < y_n - x_n \implies \frac{x_n - a}{y_n - x_n} < 1\)) e que \(-\frac{f(x_n)-f(a)}{x_n-a} + \frac{f(y_n)-f(a)}{y_n-a} \to 0\). Segue que
+                \[ \lim_{n \to \infty} \frac{f(y_n)-f(x_n)}{y_n-x_n} = \lim_{n \to \infty} \frac{f(y_n)-f(a)}{y_n-a} = f'(a) \]
+            </p>
+        </div>
+    </details>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Sejam \(f, g, h : X \to \mathbb{R}\) tais que \(f(x) \le g(x) \le h(x)\) para todo \(x \in X\). Se f e h são deriváveis em \(a \in X \cap X'\), com \(f(a) = h(a)\) e \(f'(a) = h'(a)\) prove que g é derivável nesse ponto, com \(g'(a) = f'(a)\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Iremos fixar a notação:
-                        \[ \lim_{x \to a^+} f(x) = f(a^+) \quad \text{e} \quad \lim_{x \to a^-}f(x) = f(a^-) \]
-                        Como \(f(a)=h(a)\), \(f(a) \le g(a) \le h(a) =f(a)\implies g(a)=h(a)\).
-                        \[ f(x)-f(a) \le g(x)-g(a) \le h(x)-h(a) \]
-                        Daí, dividindo a desigualdade por \(x-a>0\) e tomando o limite
-                        \[ \lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} \le \lim_{x \to a^+} \frac{g(x)-g(a)}{x-a} \le \lim_{x \to a^+} \frac{h(x)-h(a)}{x-a} \]
-                        \[ \implies f'(a^+) \le \lim_{x \to a^+} \frac{g(x)-g(a)}{x-a} \le h'(a^+) \]
-                        \[ \implies g'(a^+) = h'(a^+) = f'(a^+) \]
-                        Fazendo o mesmo procedimento, sendo que tomando os limites laterais a esquerda teremos
-                        \[ g'(a^-) = h'(a^-) = f'(a^-) \]
-                        Como f, g, h são deriváveis em a então \(h'(a^-)=h'(a^+)=f'(a^-)=f'(a^+)\)
-                        \[ \implies g'(a) = h'(a) = f'(a) \]
-                    </p>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f : X \to \mathbb{R}\) derivável no ponto \(a \in \text{Int } X\). Prove que \(\lim_{h \to 0} \frac{f(a+h) - f(a-h)}{2h} = f'(a)\). Dê um exemplo em que este limite existe porém f não é derivável no ponto a.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Uma vez que f possui derivada em a, podemos escrever, para todo \(h > 0\) tal que \(a+h \in X\), (existe pois \(a \in \text{int } X\)):
+                <div class="align">
+                    \[ f(a+h) = f(a) + f'(a) \cdot h + r(h), \quad \text{com } \lim_{h\to 0} \frac{r(h)}{h} = 0 \]
+                    \[ f(a-h) = f(a) - f'(a) \cdot h + r(-h), \quad \text{com } \lim_{h\to 0} \frac{r(h)}{h} = 0 \]
                 </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f : X \to \mathbb{R}\) derivável no ponto \(a \in X \cap X' \cap X'_+\). Se \(x_n < a < y_n\) para todo n e \(\lim x_n = \lim y_n = a\), prove que \(\lim_{n \to +\infty} \frac{f(y_n) - f(x_n)}{y_n - x_n} = f'(a)\). Interprete este fato geometricamente.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        <div class="align">
-                            \[ \frac{f(y_n) - f(x_n)}{y_n - x_n} = \frac{f(y_n) - f(a)}{y_n - x_n} + \frac{f(a) - f(x_n)}{y_n - x_n} \]
-                            \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ \frac{y_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
-                            \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ \frac{y_n - x_n + x_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
-                            \[ = \frac{f(y_n) - f(a)}{y_n - a} \left[ 1 + \frac{x_n - a}{y_n - x_n} \right] - \frac{f(x_n) - f(a)}{x_n - a} \cdot \left[ \frac{x_n - a}{y_n - x_n} \right] \]
-                            \[ = \frac{f(y_n) - f(a)}{y_n - a} + \frac{f(y_n) - f(a)}{y_n - a} \frac{x_n - a}{y_n - x_n} - \frac{f(x_n) - f(a)}{x_n - a} \left[ \frac{x_n - a}{y_n - x_n} \right] \]
-                            \[ = \frac{f(y_n) - f(a)}{y_n - a} + \left( \frac{x_n - a}{y_n - x_n} \right) \left( - \frac{f(x_n) - f(a)}{x_n - a} + \frac{f(y_n) - f(a)}{y_n - a} \right) \]
-                        </div>
-                        Assim, tomando o limite, usando o fato que \(\frac{x_n-a}{y_n-x_n}\) é limitado (pois \(x_n < a < y_n \implies x_n - a < y_n - x_n \implies \frac{x_n - a}{y_n - x_n} < 1\)) e que \(-\frac{f(x_n)-f(a)}{x_n-a} + \frac{f(y_n)-f(a)}{y_n-a} \to 0\). Segue que
-                        \[ \lim_{n \to \infty} \frac{f(y_n)-f(x_n)}{y_n-x_n} = \lim_{n \to \infty} \frac{f(y_n)-f(a)}{y_n-a} = f'(a) \]
-                    </p>
+                Assim,
+                <div class="align">
+                    \[ f(a+h) - f(a-h) = 2f'(a) \cdot h + r(h) - r(-h) \]
+                    \[ \implies \lim_{h\to 0} \frac{f(a+h) - f(a-h)}{2h} = \lim_{h\to 0} \left( f'(a) + \frac{r(h)}{2h} \right) \]
+                    \[ = f'(a). \]
                 </div>
-            </details>
+            </p>
+        </div>
+    </details>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f : X \to \mathbb{R}\) derivável no ponto \(a \in \text{Int } X\). Prove que \(\lim_{h \to 0} \frac{f(a+h) - f(a-h)}{2h} = f'(a)\). Dê um exemplo em que este limite existe porém f não é derivável no ponto a.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Uma vez que f possui derivada em a, podemos escrever, para todo \(h > 0\) tal que \(a+h \in X\), (existe pois \(a \in \text{int } X\)):
-                        <div class="align">
-                            \[ f(a+h) = f(a) + f'(a) \cdot h + r(h), \quad \text{com } \lim_{h\to 0} \frac{r(h)}{h} = 0 \]
-                            \[ f(a-h) = f(a) - f'(a) \cdot h + r(-h), \quad \text{com } \lim_{h\to 0} \frac{r(h)}{h} = 0 \]
-                        </div>
-                        Assim,
-                        <div class="align">
-                            \[ f(a+h) - f(a-h) = 2f'(a) \cdot h + r(h) - r(-h) \]
-                            \[ \implies \lim_{h\to 0} \frac{f(a+h) - f(a-h)}{2h} = \lim_{h\to 0} \left( f'(a) + \frac{r(h)}{2h} \right) \]
-                            \[ = f'(a). \]
-                        </div>
-                    </p>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja I um intervalo aberto. Uma função \(f: I \to \mathbb{R}\) diz-se de classe \(\mathcal{C}^2\) quando é derivável e sua derivada \(f' : I \to \mathbb{R}\) é de classe \(\mathcal{C}^1\). Prove que se \(f(I) \subset J\) e \(g: J \to \mathbb{R}\) também é de classe \(\mathcal{C}^2\), então \(g \circ f : I \to \mathbb{R}\) é de classe \(\mathcal{C}^2\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Definindo \(h=g \circ f\), pela regra da cadeia \(h'(x) = g'(f(x)) \cdot f'(x)\), aplicando novamente temos \(h''(x) = g''(f(x)) \cdot f'(x) \cdot f'(x) + f''(x) \cdot g'(f(x))\), uma vez que composição, produto e subtração de função contínua continua contínua então segue que \(h''(x)\) é contínua em todo \(x \in X.\)
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: I \to \mathbb{R}\) de classe \(\mathcal{C}^2\) com \(f(I) = J\) e \(f'(x) \ne 0\) para todo \(x \in I\). Calcule a derivada segunda de \(f^{-1} : J \to \mathbb{R}\) e mostre que \(f^{-1}\) é de classe \(\mathcal{C}^2\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Defina \(g=f^{-1}\), pela derivada da inversa sabemos que \[ g(x)'=\frac{1}{f'(x)} \implies g''(x) = \frac{f''(x)}{f'(x)^2} \]
+                Daí, uma vez que \(f'(x) \neq 0\) então \(g''(x)\) é contínua e, portanto, \(g\) é de classe \(\mathcal{C}^2\)
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Se \(f: \mathbb{R} \to \mathbb{R}\) é de classe \(\mathcal{C}^1\), o conjunto dos seus pontos críticos é fechado. Dê exemplo de uma função derivável \(f: \mathbb{R} \to \mathbb{R}\) tal que \(0\) seja limite de uma sequência de pontos críticos de f, mas \(f'(0) > 0\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Dado \(x_n \to c\) onde \(x_n\) é uma sequência de pontos críticos. Uma vez que f é classe \(C^1\) então \(\lim f'(x_n) = f'(c)\), como \(x_n\) são pontos críticos \(\lim f'(x_n) = 0 \implies f'(x) = 0\).
+                Mas podemos ter,
+                \(f(x) = \sin(x)\), sabemos que \(x_n = 2\pi n \) é uma sequência de pontos críticos de \(f\), mas \( f'(x) = \cos(x) \implies f'(x_n) = \cos(2\pi n) = 1>0\)
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: I \to \mathbb{R}\) derivável no intervalo aberto I. Um ponto crítico \(c \in I\) chama-se \textit{não-degenerado} quando \(f''(c) \ne 0\). Prove que todo ponto crítico não-degenerado é um ponto de máximo local ou de mínimo local.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Suponha \(f''(c) > 0\), assim existe \(\delta > 0\) tal que
+                \[ \lim_{x\to c^+} \frac{f'(x) - f'(c)}{x - c} > 0 \implies f'(x) - f'(c) > 0 \]
+                sempre que \(x \in (c, c+\delta)\). Analogamente, podemos encontrar \(\delta > 0\) (não necessariamente o mesmo, mas daí basta pegar o mínimo) tal que \(f'(y) - f'(c) < 0\) sempre que \(y \in (c-\delta, c)\). Uma vez que \(c\) é ponto crítico, \(f'(c)=0\). Daí, se \(x\) está a direita de \(c\) temos \(f'(x)>0\) então \(f(x)>f(c)\) e se \(y\) está a esquerda de \(c\) temos \(f(c)>f(y)\). Logo \(c\) é ponto de mínimo local.
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Se \(c \in I\) é um ponto crítico não-degenerado da função \(f : I \to \mathbb{R}\), derivável no intervalo aberto I, prove que existe \(\delta > 0\) tal que c é o único ponto crítico de f no intervalo \((c - \delta, c + \delta)\). Conclua que, se f é de classe \(\mathcal{C}^1\), num conjunto compacto \(K \subset I\), onde os pontos críticos de f são todos não-degenerados, só existe um número finito deles.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Fazendo o mesmo procedimento da questão anterior vemos que podemos achar \(\delta>0\) tal que
+                \[ c-\delta < x < c < y < c+\delta \implies f'(x) < f'(c) < f'(y) \implies f'(x) < 0 < f'(y) \]
+                então \(c\) é o único ponto crítico em \((c-\delta, c+\delta)\).
+                Se f é de classe \(\mathcal{C}^1\) em K compacto e existem infinitos pontos críticos não degenerados então conseguimos uma coleção infinita e enumerável \(\{x_n\} \subset K\). Tal coleção forma uma sequência que admite subsequência convergente \(x_{n_k} \to x \in K\).
+                \(f'(x_{n_k}) \to f'(x) \implies f'(x)=0\), logo \(x\) é ponto crítico, mas isso é um absurdo pois significa que não existe um intervalo com apenas um ponto crítico.
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Prove diretamente (sem usar o exercício anterior) que se o ponto crítico c da função \(f: I \to \mathbb{R}\) é limite de uma sequência de pontos críticos \(c_n \ne c\) e \(f''(c)\) existe, então \(f''(c) = 0\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Seja \(c_n \to c\), daí:
+                \[ f''(c) = \lim_{n \to \infty} \frac{f'(c_n) - f'(c)}{c_n - 0} = 0 \]
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Prove que o conjunto dos pontos de máximo ou de mínimo local estrito de qualquer função \(f: \mathbb{R} \to \mathbb{R}\) é enumerável.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Pelo exercício existe um intervalo que contém apenas um ponto crítico, logo seja \(D\) o conjunto dos pontos críticos e para cada \(c \in D\) seja \(I_c\) o intervalo que contém apenas o \(c\) como ponto crítico, daí note que a função
+                \[ \begin{array}{rcl} f: D & \to & \mathbb{Q} \\ a & \mapsto & I_a \cap \mathbb{Q} \end{array} \]
+                é injetiva, logo \(D\) é enumerável.
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(g: I \to \mathbb{R}\) contínua no intervalo I, exceto no ponto \(c \in I\). Se existem os limites laterais \(\lim_{x \to c^-} g(x) = A\) e \(\lim_{x \to c^+} g(x) = B\), com \(A \ne B\), então nenhuma função derivável \(f: I \to \mathbb{R}\) tem derivada \(f' = g\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Mostraremos que a função derivada \(g\) de uma função derivável \(f\) não pode ter descontinuidades de primeira espécie (os limites laterais diferirem).
+                Se existir \(\lim_{x \to c^+} g(x) = A\) e \(A \ne g(c)\), digamos \(A > g(c)\).
+                Existe \(d\) tal que \(A > d > g(c)\), daí por \(A > d\) sabemos que existe \(\delta > 0\) tal que
+                \[ x \in (c, c+\delta) \implies d < g(x) \]
+                Logo, em particular temos \(g(c) < d < g(c+\delta/2)\).
+                Mas, não existe \(p \in (c, c+\delta/2)\) tal que \(g(p)=d\), contrariando o Teorema do Valor Intermediário. Portanto, se \(g\) tem descontinuidades de primeira espécie então \(g\) não pode ser a derivada de função alguma derivável num intervalo.
+            </p>
+        </div>
+    </details>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(p(x) = x^3 + ax^2 + bx + c\) um polinômio de 3º grau. Mostre que \(p: \mathbb{R} \to \mathbb{R}\) é um homeomorfismo se, e somente se, \(a^2 \le 3b\). Conclua que \(p^{-1}\) será derivável se, e só se, \(a^2 < 3b\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                \((\implies)\) Todo homeomorfismo é crescente ou decrescente (pois tem que ser injetiva), como \(p(x)\) é de grau 3 (com coeficiente líder positivo), então será crescente. Daí:
+                \[ p'(x) = 3x^2 + 2ax + b \ge 0 \]
+                Para que a quadrática seja sempre \(\ge 0\), seu discriminante deve ser \(\Delta \le 0\).
+                \[ \Delta = (2a)^2 - 4(3)(b) = 4a^2 - 12b \le 0 \]
+                \[ \implies 4a^2 \le 12b \implies a^2 \le 3b \]
+                \((\impliedby)\) Suponha \(a^2 \le 3b\) e \(p'(x) = 3x^2 + 2ax + b \ge 0\), logo o polinômio é crescente (não-decrescente). Como a derivada só se anula em no máximo um ponto, a função é estritamente crescente, e portanto injetiva.
+                A função é também sobrejetiva, pois \(\lim_{x\to +\infty} p(x) = \infty\) e \(\lim_{x\to -\infty} p(x) = -\infty\).
+                Logo, \(p\) é uma bijeção.
+                E como todo polinômio é contínuo então \(p^{-1}\) é contínuo e logo é um homeomorfismo.
+                Finalmente, como \(p(x)\) é um homeomorfismo, sua inversa \(p^{-1}\) existe e é contínua. A derivada \((p^{-1})'\) existirá nos pontos \(y\) tais que \(p'(x) \ne 0\), onde \(y=p(x)\).
+                Vimos que \(p'(x) \ge 0\). A condição para que \(p'(x)\) seja estritamente positiva, ou seja, \(p'(x) > 0\) para todo \(x\), é que o discriminante seja estritamente negativo:
+                \[ \Delta < 0 \implies 4a^2 - 12b < 0 \implies a^2 < 3b. \]
+            </p>
+        </div>
+    </details>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: (c, +\infty) \to \mathbb{R}\) derivável. Se existem \(\lim_{x \to +\infty} f(x) = a\), com \(a \in \mathbb{R}\) e \(\lim_{x \to +\infty} f'(x) = b\), então \(b=0\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Considere para cada \(n \in \mathbb{N}\), existe \(c_n \in (n,n+1)\) tal que\(f(n+1) - f(n) = f'(c_n)\)
+                Note que quando \(n \to \infty\) temos \(f'(c_n) \to \infty\), supondo que \(\lim_{x_n \to \infty} f'(x_n) = b\) então
+                \(b= \lim f'(c_n) = \lim f(n+1) - f(n) = a - a=0\)
+            </p>
+        </div>
+    </details>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a,b] \to \mathbb{R}\) contínua, derivável em \((a,b)\). Suponha que \(f(a)=f(b)=0\). Então, dado arbitrariamente \(k \in \mathbb{R}\), existe \(c \in (a,b)\) tal que \(f'(c) = kf(c)\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Defina para \(k \in \mathbb{R}\) dado arbitrariamente a função \(\phi: [a,b] \to \mathbb{R}\) por \(\phi(x) = \frac{f(x)}{e^{kx}}\).
+                Como \(f(a)=f(b)=0\), temos que:
+                \[ \phi(a) = \frac{f(a)}{e^{ka}} = 0 \quad \text{e} \quad \phi(b) = \frac{f(b)}{e^{kb}} = 0 \]
+                Além disso, \(\phi\) é contínua em \([a,b]\) e derivável em \((a,b)\).
+                Com \(\phi(a) = \phi(b)\), pelo Teorema de Rolle, segue que existe \(c \in (a,b)\) tal que \(\phi'(c)=0\).nAssim, calculamos a derivada:
+                \[ \phi'(c) = \frac{f'(c)e^{kc} - f(c)ke^{kc}}{(e^{kc})^2} = \frac{f'(c)e^{kc} - kf(c)e^{kc}}{e^{2kc}} = 0 \]
+                \[ \implies f'(c) - kf(c) = 0 \implies f'(c) = kf(c). \]
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [0, +\infty) \to \mathbb{R}\) duas vezes derivável. Se \(f''(x)\) é limitada e existe \(\lim_{x \to +\infty} f(x)\), então \(\lim_{x \to +\infty} f'(x) = 0\).
+        </p>
+    </div>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a,b] \to \mathbb{R}\) derivável. Suponha que \(|f'(x)| \le c\), onde \(c \in (0,1)\) e \(f([a,b]) \subset [a,b]\). Então, existe um único \(c \in [a,b]\) tal que \(f(c)=c\).
+        </p>
+    </div>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Dada \(f: \mathbb{R} \to \mathbb{R}\) derivável, com derivada limitada. Prove que existe uma constante \(c \in \mathbb{R}\) tal que a função \(\phi : \mathbb{R} \to \mathbb{R}\), dada por \(\phi(x) = x+cf(x)\), é uma bijeção cuja inversa é derivável.
+        </p>
+    </div>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a,b] \to \mathbb{R}\) contínua, derivável em \((a,b)\), exceto possivelmente no ponto \(c \in (a,b)\). Se existe \(\lim_{x \to c} f'(x) = L\), prove que \(f'(c)\) existe e é igual a \(L\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Dado \(x \in (a,b)\) com \(x \ne c\), pelo TVM existe \(z_x\) entre \(c\) e \(x\) tal que
+                \[ f'(z_x) = \frac{f(x)-f(c)}{x-c} \]
+                \[ \lim_{x\to c} f'(z_x) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c} \]
+                Quando \(x \to c \implies z_x \to c\), daí \(L=f'(c)\).
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a,b] \to \mathbb{R}\) uma função com derivada limitada em \((a,b)\) e com a propriedade do valor intermediário. Prove que \(f\) é contínua.
+        </p>
+    </div>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Se \(f: I \to \mathbb{R}\) cumpre \(|f(y)-f(x)| \le c \cdot |y-x|^\alpha\) com \(\alpha > 1, c \in \mathbb{R}\) e \(x,y \in I\) arbitrários, prove que \(f\) é constante.
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Note que \(|f(y)-f(x)| \le c|y-x|^\alpha\)
+                \[ \implies -c|y-x|^{\alpha-1} \le \frac{f(y)-f(x)}{|y-x|} \le c|y-x|^{\alpha-1} \]
+                Uma vez que \(\alpha - 1 > 0\) e quando \(y \to x \implies |y-x|^{\alpha-1} \to 0\).
+                Daí, \[\lim_{y \to x} -c|y-x|^{\alpha-1} = \lim_{y \to x} c|y-x|^{\alpha-1} = 0\]
+                Portanto,
+                \[ \lim_{y\to x} \frac{|f(y)-f(x)|}{|y-x|} = f'(x) = 0 \]
+                Uma vez que \(f\) é definida num intervalo e \(f'(x)=0, \forall x\) então \(f\) é constante.
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Prove que se \(f\) é derivável num intervalo e \(f'\) é contínua no ponto \(a\) então, para quaisquer sequências de pontos \(x_n \ne y_n\) nesse intervalo, com \(\lim x_n = \lim y_n = a\), tem-se \(\lim \frac{f(y_n)-f(x_n)}{y_n-x_n} = f'(a)\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Dadas \(x_n\) e \(y_n\), pelo Teorema do Valor Médio, para cada \(n\) existe \(c_n\) entre \(x_n\) e \(y_n\) tal que
+                \[ f'(c_n) = \frac{f(x_n)-f(y_n)}{x_n-y_n} \]
+                Uma vez que \(c_n\) está entre \(x_n\) e \(y_n\), pelo Teorema do Confronto segue que \(c_n \to a\). Daí, desde que \(f'\) é contínua em \(a\), então \(f'(c_n) \to f'(a)\).
+                Portanto, \(f'(a) = \lim f'(c_n) = \lim \frac{f(x_n)-f(y_n)}{x_n-y_n}\).
+            </p>
+        </div>
+    </details>
+
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Sejam \(f,g: [a,b] \to \mathbb{R}\) contínuas e deriváveis em \((a,b)\). Se \(g'\) não se anula em \((a,b)\), então \(g(a) \ne g(b)\) e existe \(c \in (a,b)\) tal que \(\frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}\).
+        </p>
+    </div>
+    <details class="solucao">
+        <summary></summary>
+        <div>
+            <p>
+                Se \(g(a)=g(b)\) então pelo Teorema de Rolle existe \(c \in (a,b)\) tal que \(g'(c)=0\), contradição.
+                Para a segunda parte, defina \(h(x) = f(x) - \lambda g(x)\) e escolhemos \(\lambda\) tal que \(h(a)=h(b)\), ou seja:
+                \(h(a) = f(a) - \lambda g(a)\) e \(h(b) = f(b) - \lambda g(b)\).
+                \[ f(a) - \lambda g(a) = f(b) - \lambda g(b) \implies \lambda = \frac{f(b)-f(a)}{g(b)-g(a)} \]
+                h é contínua e derivável em \((a,b)\), porque f, g o são. Logo, pelo Teorema de Rolle existe \(c \in (a,b)\) tal que \(h'(c)=0\).
+                <div class="align">
+                    \[ \implies h'(c) = f'(c) - \lambda g'(c) = 0 \]
+                    \[ \implies f'(c) = \lambda g'(c) \]
+                    \[ \implies \frac{f'(c)}{g'(c)} = \lambda = \frac{f(b)-f(a)}{g(b)-g(a)} \]
                 </div>
-            </details>
+            </p>
+        </div>
+    </details>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja I um intervalo aberto. Uma função \(f: I \to \mathbb{R}\) diz-se de classe \(\mathcal{C}^2\) quando é derivável e sua derivada \(f' : I \to \mathbb{R}\) é de classe \(\mathcal{C}^1\). Prove que se \(f(I) \subset J\) e \(g: J \to \mathbb{R}\) também é de classe \(\mathcal{C}^2\), então \(g \circ f : I \to \mathbb{R}\) é de classe \(\mathcal{C}^2\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Definindo \(h=g \circ f\), pela regra da cadeia \(h'(x) = g'(f(x)) \cdot f'(x)\), aplicando novamente temos \(h''(x) = g''(f(x)) \cdot f'(x) \cdot f'(x) + f''(x) \cdot g'(f(x))\), uma vez que composição, produto e subtração de função contínua continua contínua então segue que \(h''(x)\) é contínua em todo \(x \in X.\)
-                    </p>
-                </div>
-            </details>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: I \to \mathbb{R}\) derivável num intervalo. Uma \textit{raiz} de \(f\) é um ponto \(c \in I\) tal que \(f(c) = 0\). Entre duas raízes consecutivas de \(f'\) existe no máximo uma raiz de \(f\). Use este fato para mostrar que o polinômio \(p(x) = x^3-6x^2+9x-1\) possui exatamente uma raiz no intervalo \((1,3)\).
+        </p>
+    </div>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: I \to \mathbb{R}\) de classe \(\mathcal{C}^2\) com \(f(I) = J\) e \(f'(x) \ne 0\) para todo \(x \in I\). Calcule a derivada segunda de \(f^{-1} : J \to \mathbb{R}\) e mostre que \(f^{-1}\) é de classe \(\mathcal{C}^2\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Defina \(g=f^{-1}\), pela derivada da inversa sabemos que \[ g(x)'=\frac{1}{f'(x)} \implies g''(x) = \frac{f''(x)}{f'(x)^2} \]
-                        Daí, uma vez que \(f'(x) \neq 0\) então \(g''(x)\) é contínua e, portanto, \(g\) é de classe \(\mathcal{C}^2\)
-                    </p>
-                </div>
-            </details>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a, b] \to \mathbb{R}\) derivável. Se \(f'(a) = f'(b)\), mostre que existe \(c \in (a, b)\) tal que \(\frac{f(c)-f(a)}{c-a} = f'(c)\). Interprete este fato geometricamente. [Sugestão: Considere primeiro o caso em que \(f'(a) = f'(b) = 0\). Mostre que a função \(\xi: [a, b] \to \mathbb{R}\), dada por \(\xi(x) = \frac{f(x)-f(a)}{x-a}\) se \(x \ne a\) e \(\xi(a) = 0\), atinge seu máximo ou seu mínimo num ponto interior \(c \in (a, b)\). Para passar ao caso geral, considere a função auxiliar \(g(x) = f(x) - x \cdot f'(a)\).]
+        </p>
+    </div>
 
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Se \(f: \mathbb{R} \to \mathbb{R}\) é de classe \(\mathcal{C}^1\), o conjunto dos seus pontos críticos é fechado. Dê exemplo de uma função derivável \(f: \mathbb{R} \to \mathbb{R}\) tal que \(0\) seja limite de uma sequência de pontos críticos de f, mas \(f'(0) > 0\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Dado \(x_n \to c\) onde \(x_n\) é uma sequência de pontos críticos. Uma vez que f é classe \(C^1\) então \(\lim f'(x_n) = f'(c)\), como \(x_n\) são pontos críticos \(\lim f'(x_n) = 0 \implies f'(x) = 0\).
-                        Mas podemos ter,
-                        \(f(x) = \sin(x)\), sabemos que \(x_n = 2\pi n \) é uma sequência de pontos críticos de \(f\), mas \( f'(x) = \cos(x) \implies f'(x_n) = \cos(2\pi n) = 1>0\)
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: I \to \mathbb{R}\) derivável no intervalo aberto I. Um ponto crítico \(c \in I\) chama-se \textit{não-degenerado} quando \(f''(c) \ne 0\). Prove que todo ponto crítico não-degenerado é um ponto de máximo local ou de mínimo local.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Suponha \(f''(c) > 0\), assim existe \(\delta > 0\) tal que
-                        \[ \lim_{x\to c^+} \frac{f'(x) - f'(c)}{x - c} > 0 \implies f'(x) - f'(c) > 0 \]
-                        sempre que \(x \in (c, c+\delta)\). Analogamente, podemos encontrar \(\delta > 0\) (não necessariamente o mesmo, mas daí basta pegar o mínimo) tal que \(f'(y) - f'(c) < 0\) sempre que \(y \in (c-\delta, c)\). Uma vez que \(c\) é ponto crítico, \(f'(c)=0\). Daí, se \(x\) está a direita de \(c\) temos \(f'(x)>0\) então \(f(x)>f(c)\) e se \(y\) está a esquerda de \(c\) temos \(f(c)>f(y)\). Logo \(c\) é ponto de mínimo local.
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Se \(c \in I\) é um ponto crítico não-degenerado da função \(f : I \to \mathbb{R}\), derivável no intervalo aberto I, prove que existe \(\delta > 0\) tal que c é o único ponto crítico de f no intervalo \((c - \delta, c + \delta)\). Conclua que, se f é de classe \(\mathcal{C}^1\), num conjunto compacto \(K \subset I\), onde os pontos críticos de f são todos não-degenerados, só existe um número finito deles.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Fazendo o mesmo procedimento da questão anterior vemos que podemos achar \(\delta>0\) tal que
-                        \[ c-\delta < x < c < y < c+\delta \implies f'(x) < f'(c) < f'(y) \implies f'(x) < 0 < f'(y) \]
-                        então \(c\) é o único ponto crítico em \((c-\delta, c+\delta)\).
-                        Se f é de classe \(\mathcal{C}^1\) em K compacto e existem infinitos pontos críticos não degenerados então conseguimos uma coleção infinita e enumerável \(\{x_n\} \subset K\). Tal coleção forma uma sequência que admite subsequência convergente \(x_{n_k} \to x \in K\).
-                        \(f'(x_{n_k}) \to f'(x) \implies f'(x)=0\), logo \(x\) é ponto crítico, mas isso é um absurdo pois significa que não existe um intervalo com apenas um ponto crítico.
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Prove diretamente (sem usar o exercício anterior) que se o ponto crítico c da função \(f: I \to \mathbb{R}\) é limite de uma sequência de pontos críticos \(c_n \ne c\) e \(f''(c)\) existe, então \(f''(c) = 0\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Seja \(c_n \to c\), daí:
-                        \[ f''(c) = \lim_{n \to \infty} \frac{f'(c_n) - f'(c)}{c_n - 0} = 0 \]
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Prove que o conjunto dos pontos de máximo ou de mínimo local estrito de qualquer função \(f: \mathbb{R} \to \mathbb{R}\) é enumerável.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Pelo exercício existe um intervalo que contém apenas um ponto crítico, logo seja \(D\) o conjunto dos pontos críticos e para cada \(c \in D\) seja \(I_c\) o intervalo que contém apenas o \(c\) como ponto crítico, daí note que a função
-                        \[ \begin{array}{rcl} f: D & \to & \mathbb{Q} \\ a & \mapsto & I_a \cap \mathbb{Q} \end{array} \]
-                        é injetiva, logo \(D\) é enumerável.
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(g: I \to \mathbb{R}\) contínua no intervalo I, exceto no ponto \(c \in I\). Se existem os limites laterais \(\lim_{x \to c^-} g(x) = A\) e \(\lim_{x \to c^+} g(x) = B\), com \(A \ne B\), então nenhuma função derivável \(f: I \to \mathbb{R}\) tem derivada \(f' = g\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Mostraremos que a função derivada \(g\) de uma função derivável \(f\) não pode ter descontinuidades de primeira espécie (os limites laterais diferirem).
-                        Se existir \(\lim_{x \to c^+} g(x) = A\) e \(A \ne g(c)\), digamos \(A > g(c)\).
-                        Existe \(d\) tal que \(A > d > g(c)\), daí por \(A > d\) sabemos que existe \(\delta > 0\) tal que
-                        \[ x \in (c, c+\delta) \implies d < g(x) \]
-                        Logo, em particular temos \(g(c) < d < g(c+\delta/2)\).
-                        Mas, não existe \(p \in (c, c+\delta/2)\) tal que \(g(p)=d\), contrariando o Teorema do Valor Intermediário. Portanto, se \(g\) tem descontinuidades de primeira espécie então \(g\) não pode ser a derivada de função alguma derivável num intervalo.
-                    </p>
-                </div>
-            </details>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(p(x) = x^3 + ax^2 + bx + c\) um polinômio de 3º grau. Mostre que \(p: \mathbb{R} \to \mathbb{R}\) é um homeomorfismo se, e somente se, \(a^2 \le 3b\). Conclua que \(p^{-1}\) será derivável se, e só se, \(a^2 < 3b\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        \((\implies)\) Todo homeomorfismo é crescente ou decrescente (pois tem que ser injetiva), como \(p(x)\) é de grau 3 (com coeficiente líder positivo), então será crescente. Daí:
-                        \[ p'(x) = 3x^2 + 2ax + b \ge 0 \]
-                        Para que a quadrática seja sempre \(\ge 0\), seu discriminante deve ser \(\Delta \le 0\).
-                        \[ \Delta = (2a)^2 - 4(3)(b) = 4a^2 - 12b \le 0 \]
-                        \[ \implies 4a^2 \le 12b \implies a^2 \le 3b \]
-                        \((\impliedby)\) Suponha \(a^2 \le 3b\) e \(p'(x) = 3x^2 + 2ax + b \ge 0\), logo o polinômio é crescente (não-decrescente). Como a derivada só se anula em no máximo um ponto, a função é estritamente crescente, e portanto injetiva.
-                        A função é também sobrejetiva, pois \(\lim_{x\to +\infty} p(x) = \infty\) e \(\lim_{x\to -\infty} p(x) = -\infty\).
-                        Logo, \(p\) é uma bijeção.
-                        E como todo polinômio é contínuo então \(p^{-1}\) é contínuo e logo é um homeomorfismo.
-                        Finalmente, como \(p(x)\) é um homeomorfismo, sua inversa \(p^{-1}\) existe e é contínua. A derivada \((p^{-1})'\) existirá nos pontos \(y\) tais que \(p'(x) \ne 0\), onde \(y=p(x)\).
-                        Vimos que \(p'(x) \ge 0\). A condição para que \(p'(x)\) seja estritamente positiva, ou seja, \(p'(x) > 0\) para todo \(x\), é que o discriminante seja estritamente negativo:
-                        \[ \Delta < 0 \implies 4a^2 - 12b < 0 \implies a^2 < 3b. \]
-                    </p>
-                </div>
-            </details>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: (c, +\infty) \to \mathbb{R}\) derivável. Se existem \(\lim_{x \to +\infty} f(x) = a\), com \(a \in \mathbb{R}\) e \(\lim_{x \to +\infty} f'(x) = b\), então \(b=0\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Considere para cada \(n \in \mathbb{N}\), existe \(c_n \in (n,n+1)\) tal que\(f(n+1) - f(n) = f'(c_n)\)
-                        Note que quando \(n \to \infty\) temos \(f'(c_n) \to \infty\), supondo que \(\lim_{x_n \to \infty} f'(x_n) = b\) então
-                        \(b= \lim f'(c_n) = \lim f(n+1) - f(n) = a - a=0\)
-                    </p>
-                </div>
-            </details>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a,b] \to \mathbb{R}\) contínua, derivável em \((a,b)\). Suponha que \(f(a)=f(b)=0\). Então, dado arbitrariamente \(k \in \mathbb{R}\), existe \(c \in (a,b)\) tal que \(f'(c) = kf(c)\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Defina para \(k \in \mathbb{R}\) dado arbitrariamente a função \(\phi: [a,b] \to \mathbb{R}\) por \(\phi(x) = \frac{f(x)}{e^{kx}}\).
-                        Como \(f(a)=f(b)=0\), temos que:
-                        \[ \phi(a) = \frac{f(a)}{e^{ka}} = 0 \quad \text{e} \quad \phi(b) = \frac{f(b)}{e^{kb}} = 0 \]
-                        Além disso, \(\phi\) é contínua em \([a,b]\) e derivável em \((a,b)\).
-                        Com \(\phi(a) = \phi(b)\), pelo Teorema de Rolle, segue que existe \(c \in (a,b)\) tal que \(\phi'(c)=0\).nAssim, calculamos a derivada:
-                        \[ \phi'(c) = \frac{f'(c)e^{kc} - f(c)ke^{kc}}{(e^{kc})^2} = \frac{f'(c)e^{kc} - kf(c)e^{kc}}{e^{2kc}} = 0 \]
-                        \[ \implies f'(c) - kf(c) = 0 \implies f'(c) = kf(c). \]
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [0, +\infty) \to \mathbb{R}\) duas vezes derivável. Se \(f''(x)\) é limitada e existe \(\lim_{x \to +\infty} f(x)\), então \(\lim_{x \to +\infty} f'(x) = 0\).
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a,b] \to \mathbb{R}\) derivável. Suponha que \(|f'(x)| \le c\), onde \(c \in (0,1)\) e \(f([a,b]) \subset [a,b]\). Então, existe um único \(c \in [a,b]\) tal que \(f(c)=c\).
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Dada \(f: \mathbb{R} \to \mathbb{R}\) derivável, com derivada limitada. Prove que existe uma constante \(c \in \mathbb{R}\) tal que a função \(\phi : \mathbb{R} \to \mathbb{R}\), dada por \(\phi(x) = x+cf(x)\), é uma bijeção cuja inversa é derivável.
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a,b] \to \mathbb{R}\) contínua, derivável em \((a,b)\), exceto possivelmente no ponto \(c \in (a,b)\). Se existe \(\lim_{x \to c} f'(x) = L\), prove que \(f'(c)\) existe e é igual a \(L\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Dado \(x \in (a,b)\) com \(x \ne c\), pelo TVM existe \(z_x\) entre \(c\) e \(x\) tal que
-                        \[ f'(z_x) = \frac{f(x)-f(c)}{x-c} \]
-                        \[ \lim_{x\to c} f'(z_x) = \lim_{x\to c} \frac{f(x)-f(c)}{x-c} \]
-                        Quando \(x \to c \implies z_x \to c\), daí \(L=f'(c)\).
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a,b] \to \mathbb{R}\) uma função com derivada limitada em \((a,b)\) e com a propriedade do valor intermediário. Prove que \(f\) é contínua.
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Se \(f: I \to \mathbb{R}\) cumpre \(|f(y)-f(x)| \le c \cdot |y-x|^\alpha\) com \(\alpha > 1, c \in \mathbb{R}\) e \(x,y \in I\) arbitrários, prove que \(f\) é constante.
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Note que \(|f(y)-f(x)| \le c|y-x|^\alpha\)
-                        \[ \implies -c|y-x|^{\alpha-1} \le \frac{f(y)-f(x)}{|y-x|} \le c|y-x|^{\alpha-1} \]
-                        Uma vez que \(\alpha - 1 > 0\) e quando \(y \to x \implies |y-x|^{\alpha-1} \to 0\).
-                        Daí, \[\lim_{y \to x} -c|y-x|^{\alpha-1} = \lim_{y \to x} c|y-x|^{\alpha-1} = 0\]
-                        Portanto,
-                        \[ \lim_{y\to x} \frac{|f(y)-f(x)|}{|y-x|} = f'(x) = 0 \]
-                        Uma vez que \(f\) é definida num intervalo e \(f'(x)=0, \forall x\) então \(f\) é constante.
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Prove que se \(f\) é derivável num intervalo e \(f'\) é contínua no ponto \(a\) então, para quaisquer sequências de pontos \(x_n \ne y_n\) nesse intervalo, com \(\lim x_n = \lim y_n = a\), tem-se \(\lim \frac{f(y_n)-f(x_n)}{y_n-x_n} = f'(a)\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Dadas \(x_n\) e \(y_n\), pelo Teorema do Valor Médio, para cada \(n\) existe \(c_n\) entre \(x_n\) e \(y_n\) tal que
-                        \[ f'(c_n) = \frac{f(x_n)-f(y_n)}{x_n-y_n} \]
-                        Uma vez que \(c_n\) está entre \(x_n\) e \(y_n\), pelo Teorema do Confronto segue que \(c_n \to a\). Daí, desde que \(f'\) é contínua em \(a\), então \(f'(c_n) \to f'(a)\).
-                        Portanto, \(f'(a) = \lim f'(c_n) = \lim \frac{f(x_n)-f(y_n)}{x_n-y_n}\).
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Sejam \(f,g: [a,b] \to \mathbb{R}\) contínuas e deriváveis em \((a,b)\). Se \(g'\) não se anula em \((a,b)\), então \(g(a) \ne g(b)\) e existe \(c \in (a,b)\) tal que \(\frac{f(b)-f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}\).
-                </p>
-            </div>
-            <details class="solucao">
-                <summary><p>Solução.</p></summary>
-                <div>
-                    <p>
-                        Se \(g(a)=g(b)\) então pelo Teorema de Rolle existe \(c \in (a,b)\) tal que \(g'(c)=0\), contradição.
-                        Para a segunda parte, defina \(h(x) = f(x) - \lambda g(x)\) e escolhemos \(\lambda\) tal que \(h(a)=h(b)\), ou seja:
-                        \(h(a) = f(a) - \lambda g(a)\) e \(h(b) = f(b) - \lambda g(b)\).
-                        \[ f(a) - \lambda g(a) = f(b) - \lambda g(b) \implies \lambda = \frac{f(b)-f(a)}{g(b)-g(a)} \]
-                        h é contínua e derivável em \((a,b)\), porque f, g o são. Logo, pelo Teorema de Rolle existe \(c \in (a,b)\) tal que \(h'(c)=0\).
-                        <div class="align">
-                            \[ \implies h'(c) = f'(c) - \lambda g'(c) = 0 \]
-                            \[ \implies f'(c) = \lambda g'(c) \]
-                            \[ \implies \frac{f'(c)}{g'(c)} = \lambda = \frac{f(b)-f(a)}{g(b)-g(a)} \]
-                        </div>
-                    </p>
-                </div>
-            </details>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: I \to \mathbb{R}\) derivável num intervalo. Uma \textit{raiz} de \(f\) é um ponto \(c \in I\) tal que \(f(c) = 0\). Entre duas raízes consecutivas de \(f'\) existe no máximo uma raiz de \(f\). Use este fato para mostrar que o polinômio \(p(x) = x^3-6x^2+9x-1\) possui exatamente uma raiz no intervalo \((1,3)\).
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a, b] \to \mathbb{R}\) derivável. Se \(f'(a) = f'(b)\), mostre que existe \(c \in (a, b)\) tal que \(\frac{f(c)-f(a)}{c-a} = f'(c)\). Interprete este fato geometricamente. [Sugestão: Considere primeiro o caso em que \(f'(a) = f'(b) = 0\). Mostre que a função \(\xi: [a, b] \to \mathbb{R}\), dada por \(\xi(x) = \frac{f(x)-f(a)}{x-a}\) se \(x \ne a\) e \(\xi(a) = 0\), atinge seu máximo ou seu mínimo num ponto interior \(c \in (a, b)\). Para passar ao caso geral, considere a função auxiliar \(g(x) = f(x) - x \cdot f'(a)\).]
-                </p>
-            </div>
-
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [0, +\infty) \to \mathbb{R}\) duas vezes derivável. Se \(f''\) é limitada e existe \(\lim_{x\to+\infty} f(x)\), então \(\lim_{x\to+\infty} f'(x) = 0\).
-                </p>
-            </div>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Sejam \(f, g: [a, b] \to \mathbb{R}\) contínuas e deriváveis no intervalo \((a, b)\). Então existe \(c \in (a, b)\), tal que \([f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c)\).
-                </p>
-            </div>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(p \in \mathbb{N}\). Dada \(f: I \to \mathbb{R}\) derivável no intervalo fechado \(I\), com \(f(I) \subset I\), suponha que \(g = f \circ f \circ \dots \circ f = f^p\) cumpre \(|g'(x)| \le c < 1\) para todo \(x \in I\), onde \(c\) é constante. Prove que existe um único \(a \in I\) tal que \(f(a)=a\) e que, para todo \(x \in I\) tem-se \(\lim_{n \to \infty} f^n(x) = a\) (onde \(f^n = f \circ f \circ \dots \circ f\), n vezes).
-                </p>
-            </div>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Dada \(f: \mathbb{R} \to \mathbb{R}\) derivável, com derivada limitada, prove que existe uma constante \(c \in \mathbb{R}\) tal que a função \(\phi: \mathbb{R} \to \mathbb{R}\), definida por \(\phi(x) = x+c \cdot f(x)\), é uma bijeção cuja inversa é derivável.
-                </p>
-            </div>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    A função \(f: [0, \pi] \to \mathbb{R}\), definida por \(f(x) = \cos x\), não cumpre a condição \(|f'(x)| \le c < 1\) para todo \(x \in [0, \pi]\), com \(c \in \mathbb{R}\) constante, mas \(f^2 = f \circ f\) cumpre.
-                </p>
-            </div>
-            
-            <div class="exercicio">
-                <h3></h3>
-                <p>
-                    Seja \(f: [a, b] \to \mathbb{R}\) contínua, derivável em \((a, b)\). Se \(\lim_{x \to a^+} f'(x) = +\infty\) então \(\lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} = +\infty\).
-                </p>
-            </div>
-
-        </main>
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [0, +\infty) \to \mathbb{R}\) duas vezes derivável. Se \(f''\) é limitada e existe \(\lim_{x\to+\infty} f(x)\), então \(\lim_{x\to+\infty} f'(x) = 0\).
+        </p>
+    </div>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Sejam \(f, g: [a, b] \to \mathbb{R}\) contínuas e deriváveis no intervalo \((a, b)\). Então existe \(c \in (a, b)\), tal que \([f(b)-f(a)]g'(c) = [g(b)-g(a)]f'(c)\).
+        </p>
+    </div>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(p \in \mathbb{N}\). Dada \(f: I \to \mathbb{R}\) derivável no intervalo fechado \(I\), com \(f(I) \subset I\), suponha que \(g = f \circ f \circ \dots \circ f = f^p\) cumpre \(|g'(x)| \le c < 1\) para todo \(x \in I\), onde \(c\) é constante. Prove que existe um único \(a \in I\) tal que \(f(a)=a\) e que, para todo \(x \in I\) tem-se \(\lim_{n \to \infty} f^n(x) = a\) (onde \(f^n = f \circ f \circ \dots \circ f\), n vezes).
+        </p>
+    </div>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Dada \(f: \mathbb{R} \to \mathbb{R}\) derivável, com derivada limitada, prove que existe uma constante \(c \in \mathbb{R}\) tal que a função \(\phi: \mathbb{R} \to \mathbb{R}\), definida por \(\phi(x) = x+c \cdot f(x)\), é uma bijeção cuja inversa é derivável.
+        </p>
+    </div>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            A função \(f: [0, \pi] \to \mathbb{R}\), definida por \(f(x) = \cos x\), não cumpre a condição \(|f'(x)| \le c < 1\) para todo \(x \in [0, \pi]\), com \(c \in \mathbb{R}\) constante, mas \(f^2 = f \circ f\) cumpre.
+        </p>
+    </div>
+    
+    <div class="exercicio">
+        <h3></h3>
+        <p>
+            Seja \(f: [a, b] \to \mathbb{R}\) contínua, derivável em \((a, b)\). Se \(\lim_{x \to a^+} f'(x) = +\infty\) então \(\lim_{x \to a^+} \frac{f(x)-f(a)}{x-a} = +\infty\).
+        </p>
+    </div>
+</main>
     </div>
 
 </body>
