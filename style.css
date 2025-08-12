@@ -105,34 +105,41 @@ body {
 
 /* Ajustes para o ambiente de solução (usando <details>) */
 details.solucao {
-    margin: 25px 0; /* Move a margem para o elemento principal <details> */
-}
-details.solucao summary {
     padding: 15px 20px;
-    cursor: pointer;
+    margin: 25px 0;
     border-left-width: 5px;
     border-left-style: solid;
     border-radius: 4px;
     background-color: #f0fff0;
     border-left-color: #4CAF50;
-    list-style: none; /* Remove o marcador de triângulo padrão */
-}
-details.solucao > div {
-    padding: 15px 20px;
-    border-left-width: 5px;
-    border-left-style: solid;
-    border-radius: 4px;
-    background-color: #f0fff0;
-    border-left-color: #4CAF50;
-    margin: 0;
-    padding-top: 5px;
-}
-details.solucao summary::before {
-    content: "Solução. ";
-    font-weight: bold;
-    color: #4CAF50;
 }
 
+details.solucao summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #4CAF50;
+    list-style: none; /* Remove o marcador de triângulo padrão */
+    margin-bottom: 5px; /* Adiciona um pequeno espaço entre o título e o conteúdo */
+}
+
+details.solucao summary::before {
+    content: "Solução.";
+    font-weight: bold;
+    color: #4CAF50;
+    margin-right: 5px; /* Espaço entre o rótulo e o texto do summary */
+}
+
+/* Oculta o conteúdo da solução */
+details.solucao > div {
+    display: none;
+    /* Ajusta o padding e margem para o conteúdo */
+    padding-top: 5px;
+}
+
+/* Mostra o conteúdo quando a caixa é aberta */
+details.solucao[open] > div {
+    display: block;
+}
 /* --- CÓDIGO PARA NUMERAÇÃO AUTOMÁTICA --- */
 body {
     counter-reset: theorem_counter exercicio_counter;
