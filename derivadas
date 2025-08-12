@@ -2,10 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Capítulo     X: Derivadas </title> <link rel="stylesheet" href="style.css">
+    <title>Minhas Notas de Matemática</title>
+    
+    <link rel="stylesheet" href="style.css">
 
     <script>
-    window.MathJax = {
+    window.MathJax = = {
       tex: {
         inlineMath: [['\\(', '\\)']],
         displayMath: [['\\[', '\\]']]
@@ -23,11 +25,15 @@
             <ul>
                 <li><a href="index.html">Prefácio</a></li>
                 <li><a href="cap1.html">1. Conjuntos enumeráveis e não</a></li>
-                <li><a href="capitulo2.html">2. Corpo dos Reais</a></li>                <
                 <li><a href="capitulo2.html">2. Corpo dos Reais</a></li>
-
-
-                </ul>
+                <li><a href="seqseries.html"> 3. Sequências e séries</a></li>
+                <li><a href="topologia.html"> 4. Derivadas</a></li>
+                <li><a href="limite.html"> 5. Limites de funções</a></li>
+                <li><a href="continuidade.html"> 6. Funções contínuas</a></li>
+                <li><a href="derivadas.html"> 7. Derivadas</a></li>
+                <li><a href="integral.html"> 8. Integral de Riemann</a></li>
+                <li><a href="seqfun.html"> 9. Sequências e séries de funções</a></li>
+            </ul>
         </nav>
 
         <main class="content">
