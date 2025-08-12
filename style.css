@@ -61,7 +61,18 @@ body {
     border-left-style: solid;
     border-radius: 4px;
 }
+.exercicio h3, .solucao h3 {
+    margin-top: 0;
+}
+.exercicio h3, .solucao h3 {
+    margin-top: 0;
+    margin-bottom: 5px; /* Valor pequeno para manter uma leve separação */
+}
 
+.exercicio p, .solucao p {
+    margin-top: 0;
+    margin-bottom: 10px; /* Mantém a separação entre parágrafos, se houver */
+}
 /* Cores específicas para cada ambiente */
 .teorema {
     background-color: #e9f5f7;
