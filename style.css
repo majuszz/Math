@@ -18,8 +18,11 @@ body {
     padding: 20px;
     height: 100vh; /* Ocupa 100% da altura da tela */
     border-right: 1px solid #ddd;
+ position: fixed; /* Fixa o menu na posição */
+    top: 0; /* Alinha o menu no topo */
+    left: 0; /* Alinha o menu à esquerda */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
 }
-
 .sidebar h3 {
     margin-top: 0;
 }
@@ -46,6 +49,8 @@ body {
     flex-grow: 1; /* Faz o conteúdo ocupar o resto do espaço */
     padding: 20px 40px;
     max-width: 800px;
+ /* CÓDIGO ADICIONADO AQUI */
+    margin-left: 250px; /* Adiciona uma margem para compensar a largura do menu fixo */
 }
 
 /* Estilos para os ambientes matemáticos */
