@@ -170,7 +170,7 @@ body {
     color: #c44f4f;
 }
 
-.solucao h3::before {
+.solucao p::before {
     content: "Solução. ";
     font-weight: bold;
     color: #4CAF50;
