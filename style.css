@@ -49,8 +49,7 @@ body {
 }
 
 /* Estilos para os ambientes matemáticos */
-
-.teorema, .definicao, .exemplo, .prova {
+.teorema, .definicao, .exemplo, .prova, .corolario, .lema, .exercicio, .solucao {
     padding: 15px 20px;
     margin: 25px 0;
     border-left-width: 5px;
@@ -58,13 +57,7 @@ body {
     border-radius: 4px;
 }
 
-.teorema h3, .definicao h3, .exemplo h3, .prova h3 {
-    margin-top: 0;
-    font-size: 1.1em;
-}
-
 /* Cores específicas para cada ambiente */
-
 .teorema {
     background-color: #e9f5f7;
     border-left-color: #005f73;
@@ -84,37 +77,84 @@ body {
     background-color: #f8f9fa;
     border-left-color: #ced4da;
 }
-/* --- CÓDIGO PARA NUMERAÇÃO AUTOMÁTICA --- */
 
-/* 1. Inicia um contador chamado "theorem_counter" para a página inteira */
-body {
-    counter-reset: theorem_counter; 
+.corolario {
+    background-color: #e0f2f1;
+    border-left-color: #00695c;
 }
 
-/* 2. Para cada um desses ambientes, aumenta o contador em 1 */
+.lema {
+    background-color: #e3f2fd;
+    border-left-color: #1565c0;
+}
+
+.exercicio {
+    background-color: #fff0f0;
+    border-left-color: #c44f4f;
+}
+
+.solucao {
+    background-color: #f0fff0;
+    border-left-color: #4CAF50;
+}
+
+/* --- CÓDIGO PARA NUMERAÇÃO AUTOMÁTICA --- */
+body {
+    counter-reset: theorem_counter exercicio_counter;
+}
+
 .teorema, .definicao, .exemplo, .prova, .corolario, .lema {
     counter-increment: theorem_counter;
 }
 
-/* 3. Adiciona o texto "Teorema X." ANTES do título que você escrever */
-.teorema h3::before {
-    content: "Teorema " counter(theorem_counter) ". ";
-    font-weight: bold; /* Deixa o "Teorema X." em negrito */
+.exercicio {
+    counter-increment: exercicio_counter;
 }
 
-/* Faz o mesmo para os outros ambientes */
+.teorema h3::before {
+    content: "Teorema " counter(theorem_counter) ". ";
+    font-weight: bold;
+    color: #005f73;
+}
+
 .definicao h3::before {
     content: "Definição " counter(theorem_counter) ". ";
     font-weight: bold;
+    color: #fca311;
 }
 
 .exemplo h3::before {
     content: "Exemplo " counter(theorem_counter) ". ";
     font-weight: bold;
+    color: #6c757d;
 }
 
-/* Adicione outros se precisar, como corolário, lema, etc. */
+.prova h3::before {
+    content: "Prova " counter(theorem_counter) ". ";
+    font-weight: bold;
+    color: #ced4da;
+}
+
 .corolario h3::before {
     content: "Corolário " counter(theorem_counter) ". ";
     font-weight: bold;
+    color: #00695c;
+}
+
+.lema h3::before {
+    content: "Lema " counter(theorem_counter) ". ";
+    font-weight: bold;
+    color: #1565c0;
+}
+
+.exercicio h3::before {
+    content: "Exercício " counter(exercicio_counter) ". ";
+    font-weight: bold;
+    color: #c44f4f;
+}
+
+.solucao h3::before {
+    content: "Solução. ";
+    font-weight: bold;
+    color: #4CAF50;
 }
