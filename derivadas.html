@@ -54,7 +54,28 @@
             Usando as propriedades gerais se limite podemos reformular essa definição da seguinte maneira: 
         </p>
 
-            
+<div class="teorema">
+  <p>
+  $f: X \to \mathbb{R}$ é derivável no ponto $a$ se, e somente se, dada qualquer
+  sequência de pontos $x_n \in X - \{a\}$ com $\lim x_n = a$, tem-se
+  $$\lim_{n \to \infty} \frac{f(x_n) - f(a)}{x_n - a} = f'(a).$$</p>
+</div>
+ <p>
+     Um resultado muito usado nos cursos de cálculo é a regra da cadeia que formalmente diz o seguinte:
+ </p>  
+
+<div class="teorema">
+  <p>Sejam $f: X \to \mathbb{R}$, $g: Y \to \mathbb{R}$, $f(X) \subset Y$, $a \in X \cap X'$, $b = f(a) \in Y \cap Y'$. Se existem $f'(a)$ e $g'(b)$ então $g \circ f: X \to \mathbb{R}$ é derivável no ponto $a$, valendo $(g \circ f)'(a) = g'(b) \cdot f'(a)$.</p>
+</div>
+
+   <p>
+       Como corolário imediato desse resultado, temos a derivada da inversa: 
+   </p>      
+
+<div class="corolario">
+  <h3>Corolário. (Derivada de uma função inversa.)</h3>
+  <p>Seja $f: X \to Y \subset \mathbb{R}$ uma função que possui inversa $g = f^{-1}: Y \to X \subset \mathbb{R}$. Se $f$ é derivável no ponto $a \in X \cap X'$ e $g$ é contínua no ponto $b = f(a)$ então $g$ é derivável no ponto $b$ se, e somente se, $f'(a) \ne 0$. No caso afirmativo, $g'(b) = \frac{1}{f'(a)}$.</p>
+</div>
     <div class="exercicio">
         <h3></h3>
         <p>
@@ -357,12 +378,6 @@
         </p>
     </div>
 
-    <div class="exercicio">
-        <h3></h3>
-        <p>
-            Seja \(f: [a,b] \to \mathbb{R}\) derivável. Suponha que \(|f'(x)| \le c\), onde \(c \in (0,1)\) e \(f([a,b]) \subset [a,b]\). Então, existe um único \(c \in [a,b]\) tal que \(f(c)=c\).
-        </p>
-    </div>
 
     <div class="exercicio">
         <h3></h3>
@@ -465,7 +480,12 @@
             Seja \(f: I \to \mathbb{R}\) derivável num intervalo. Uma \textit{raiz} de \(f\) é um ponto \(c \in I\) tal que \(f(c) = 0\). Entre duas raízes consecutivas de \(f'\) existe no máximo uma raiz de \(f\). Use este fato para mostrar que o polinômio \(p(x) = x^3-6x^2+9x-1\) possui exatamente uma raiz no intervalo \((1,3)\).
         </p>
     </div>
-
+<details class="solucao" open>
+  <div>
+    <p>Dados $a,b$ duas raízes consecutivas de $f'$. Se existirem duas raízes $c,d$ de $f$ entre $a,b$ então $f(c)=f(d)=0$ e $[c,d] \subset [a,b]$. Pelo Teorema de Rolle, existe $k \in (c,d)$ tal que $f'(k)=0$, o que é uma contradição, pois não existem raízes de $f'$ em $(a,b)$.</p>
+    <p>Sendo $P(x) = x^3 - 6x^2 + 9x - 1 \implies P'(x) = 3x^2 - 12x + 9$. Daí, $P'(x) = 0 \iff x=3$ ou $x=1$. Além disso, $P(1)=3$ e $P(3)=-55$. Como $P$ é contínuo, existe uma raiz em $(1,3)$ pelo TVI e não pode ter mais de uma pelo que acabamos de mostrar.</p>
+  </div>
+</details>
     <div class="exercicio">
         <h3></h3>
         <p>
@@ -500,6 +520,36 @@
             Dada \(f: \mathbb{R} \to \mathbb{R}\) derivável, com derivada limitada, prove que existe uma constante \(c \in \mathbb{R}\) tal que a função \(\phi: \mathbb{R} \to \mathbb{R}\), definida por \(\phi(x) = x+c \cdot f(x)\), é uma bijeção cuja inversa é derivável.
         </p>
     </div>
+<details class="solucao" open>
+  <div>
+    <p>Uma vez que a derivada é limitada, então $f$ é de Lipschitz. Assim, dados $x, y \in \mathbb{R}$,temos
+    $$|f(y) - f(x)| \le k|y-x|$$
+    Escolha $c$ tal que $ck < 1$. Perceba que $\varphi(x) = x + c f(x)$ é contínua, além disso, se a função não fosse injetiva, existiriam $x \ne y$ tais que $\varphi(x) = \varphi(y)$.
+    Isto é
+    $$x + c f(x) = y + c f(y)$$
+    $$x-y = c(f(y) - f(x))$$
+    $$|x-y| = |c(f(y) - f(x))| = |c||f(y) - f(x)| \le |c|k|y-x| < |y-x|$$
+    Absurdo.
+    Por outro lado, pelo TVM (Teorema do Valor Médio) existe $a \in (0, v)$ tal que
+    $$\varphi'(a) = \frac{\varphi(v) - \varphi(0)}{v - 0}$$
+    $$\implies \varphi'(a) \cdot v = \varphi(v) - \varphi(0)$$
+    $$\implies \varphi(v) - \varphi(0)= (1+c f'(a))v \ge (1-ck)v $$
+    $$ \implies \varphi(v) \ge (1-ck)v + \varphi(0) $$
+    Quando $v \to \infty \implies \varphi(v) \to \infty$. Por outro lado, existe $b \in (y,0)$ tal que
+    $$\varphi'(b) = \frac{\varphi(0) - \varphi(y)}{0-y} \implies \varphi'(b) \cdot (-y) = \varphi(0) - \varphi(y)$$
+    $$\implies \varphi(y) = \varphi(0) + y(1+cf'(b)) \le \varphi(0) + |y| (1+ck)$$
+    Quando $y \to -\infty \implies \varphi(y) \to -\infty$. Assim, a função $\varphi$ é contínua e, portanto, a imagem de $\varphi$ tem que ser um intervalo. Mas acabamos de mostrar que tal intervalo é ilimitado nos dois sentidos, logo $\varphi(\mathbb{R}) = \mathbb{R}$. Sendo uma bijeção, existe a inversa.
+    $$(\varphi^{-1})' = \frac{1}{\varphi'(x)} = \frac{1}{1+cf'(x)}$$
+    Note que $\varphi'(x) \ne 0$ pois
+    $$1 - ck \le 1+cf'(x) \le 1+ck$$
+    $$0 < 1+cf'(x) < 2$$
+    Assim, $\varphi^{-1}$ é derivável em todo o seu domínio, pois $\varphi'(x) \ne 0$ e tem a forma
+    $$(\varphi^{-1})' = \frac{1}{\varphi'(x)} = \frac{1}{1+cf'(x)}$$
+    </p>
+  </div>
+</details>
+
+
     
     <div class="exercicio">
         <h3></h3>
